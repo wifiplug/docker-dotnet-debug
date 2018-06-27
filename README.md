@@ -42,6 +42,8 @@ WORKDIR /app
 
 COPY --from=build /app/build .
 COPY ./run.sh /app
+
+RUN mkdir /root/.ssh
 RUN echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNv3QhqPOc0NthhDDbgkuspynfzZMJtLahoHPvTub9sWBZN5gTUNBMdVF8DEn9MQ8Uuf81rGAW0Jr8LDg7tSvKSNnL1+6wi7MolwE+KXzWwwX7DdvFMzx+lM9VHxC6BckjicG6pCTJVZKqzuONWb3uL/JjSeDDjYb8vMkhE4Uv4L8g4MzpZlP4QlJ8LRfv+pPqhoK6rloHvc3cFfRIn2wyoeXNcR/PGr/xP0Wv3c3y8FXlw936mOTAbZjWxnnXG7ok+iuKQcs80ayStL9LFISzCg7H6+wQlXvLAPOlsUXv+eB62AAvs6koAR5vGm4Sdr0dxJvyTaL+6U+V7FvC5FTn" > root/.ssh/authorized_keys
 
 EXPOSE 80
